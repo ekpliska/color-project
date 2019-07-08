@@ -4,6 +4,7 @@ import AddColorForm from './components/AddColorForm';
 import ColorList from './components/ColorList';
 import MemberList from './components/Member/MemberList';
 import HiddenMessages from './components/HiddenMessage/HiddenMessages';
+import CountryList from './components/CountyList/CountryList';
 
 class App extends React.Component {
 
@@ -84,7 +85,7 @@ class App extends React.Component {
 				/>
 				<br />
 				<MemberList count={3} />
-				<HiddenMessages />
+				<CountryList />
 			</div>			
 		)
 	}
