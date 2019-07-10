@@ -5,6 +5,7 @@ import ColorList from './components/ColorList';
 import MemberList from './components/Member/MemberList';
 import HiddenMessages from './components/HiddenMessage/HiddenMessages';
 import CountryList from './components/CountyList/CountryList';
+import RandomMeUsers from './components/PeopleList/RandomMeUsers';
 
 class App extends React.Component {
 
@@ -84,8 +85,9 @@ class App extends React.Component {
 					onRemove={this.removeColor}
 				/>
 				<br />
-				<MemberList count={3} />
-				<CountryList />
+				<RandomMeUsers count={10} />
+				{/* <MemberList count={3} /> */}
+				{/* <CountryList /> */}
 			</div>			
 		)
 	}
