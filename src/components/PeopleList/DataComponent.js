@@ -2,8 +2,8 @@ import React from 'react';
 import fetch from 'isomorphic-fetch';
 import { render } from 'react-dom';
 
-const DataComponent = (ComposedComponent, url) => 
-    class DataComponent extends React.Component {
+function DataComponent (ComposedComponent, url) {
+    return class DataComponent extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
@@ -13,7 +13,7 @@ const DataComponent = (ComposedComponent, url) =>
             }
         }
 
-        componentWillMount() {
+        componentWillMount() {            
             this.setState({
                 loading: true
             });
@@ -25,12 +25,12 @@ const DataComponent = (ComposedComponent, url) =>
                     loaded: true,
                     loading: false,
                     data
-                }));
-            console.log(this.state);
-            
+                }));            
         }
 
         render() {
+            console.log(this.state);
+            
             return (
                 <div className="data-component">
                     {
@@ -42,6 +42,6 @@ const DataComponent = (ComposedComponent, url) =>
             )
         }
     }
-
+}
 
 export default DataComponent;
