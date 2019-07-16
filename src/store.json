@@ -1,0 +1,26 @@
+{
+    "colors": [
+        {
+            "id": 0,
+            "title": "Ocean Blue",
+            "color": "#0070ff",
+            "rating": 3,
+            "timestamp": "Sat Mar 21 2016 16:12:09 GMT-0800 (PST)"
+        },
+        {
+            "id": 1,
+            "title": "Tomato",
+            "color": "#d10012",
+            "rating": 2,
+            "timestamp": "Fri Mar 11 2016 12:00:09 GMT-0800 (PST)"
+        },
+        {
+            "id": 2,
+            "title": "Lawn",
+            "color": "#67bf4f",
+            "rating": 1,
+            "timestamp": "Tru Mar 10 2016 01:11:09 GMT-0800 (PST)"
+        }
+    ],
+    "sort": "SORTED_BY_DATE"
+}

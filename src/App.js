@@ -2,9 +2,6 @@ import React from 'react';
 import './App.css';
 import AddColorForm from './components/AddColorForm';
 import ColorList from './components/ColorList';
-import MemberList from './components/Member/MemberList';
-import HiddenMessages from './components/HiddenMessage/HiddenMessages';
-import CountryList from './components/CountyList/CountryList';
 import RandomMeUsers from './components/PeopleList/RandomMeUsers';
 
 class App extends React.Component {
