@@ -36,7 +36,7 @@ function DataComponent (ComposedComponent, url) {
                     {
                         (this.state.loading) ?
                             <div>Loading...</div> :
-                            <ComposedComponent {...this.state} />
+                            <ComposedComponent {...this.state} {...this.props} />
                     }
                 </div>
             )
