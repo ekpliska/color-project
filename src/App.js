@@ -4,11 +4,13 @@ import AddColorForm from './components/AddColorForm';
 import ColorList from './components/ColorList';
 import RandomMeUsers from './components/PeopleList/RandomMeUsers';
 
-class App extends React.Component {
+export default class App extends React.Component {
 
 	constructor(props) {
 		super(props)
 
+		console.log('--------', props);
+		
 		this.state = {
 			colors: [
 				{
@@ -89,5 +91,3 @@ class App extends React.Component {
 		)
 	}
 }
-
-export default App;
