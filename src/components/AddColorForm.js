@@ -1,38 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { addColor } from '../actions/index';
 
-class AddColorForm extends React.Component {
+const AddColorForm = ({ store }) => {
 
-    constructor(props) {
-        super(props)
-        console.log('constructor', props);
-        
-        this.submit = this.submit.bind(this);
-    }
-
-    submit(e) {
-        const { _title, _color } = this.refs;
+    let _title, _color;
+    const submit = e => {
         e.preventDefault();
-        this.props.onNewColor(_title.value, _color.value);
+        store.dispatch(
+            addColor(_title.value, _color.value)
+        );
         _title.value = '';
         _color.value = '#000000';
         _title.focus();
-        console.log('onSubmit');
     }
 
-    render() {
-        return (
-            <form onSubmit={ this.submit }>
-                <input ref="_title" type="text" placeholder="color title..." required />
-                <input ref="_color" type="color" required />
-                <button>ADD</button>
-            </form>
-        )
-    }
+    return (
+        <form onSubmit={submit}>
+            <input ref={input => _title = input} type="text" placeholder="color title..." required />
+            <input ref={input => _color = input} type="color" required />
+            <button>ADD</button>
+        </form>
+    )
 }
 
 AddColorForm.propTypes = {
-    onNewColor: PropTypes.func
+    store: PropTypes.object
 }
 
 export default AddColorForm;

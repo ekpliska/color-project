@@ -1,7 +1,9 @@
 import React from 'react';
 import { Color } from './Color';
+import { rateColor, removeColor } from '../actions/index';
 
-const ColorList = ({ colors = [], onRate = f => f, onRemove = f => f }) => {
+const ColorList = ({ store }) => {
+    const { colors, sort } = store.getState();
     return (
         <div className="color-list">
             {
@@ -12,9 +14,23 @@ const ColorList = ({ colors = [], onRate = f => f, onRemove = f => f }) => {
                             <Color
                                 key={color.id}
                                 {...color}
-                                onRate={(rating) => onRate(color.id, rating)}
-                                onRemove={() => onRemove(color.id)}
+                                onRate={(rating) => 
+                                    store.dispatch(
+                                        rateColor(color.id, rating)
+                                    )
+                                }
+                                onRemote={(id) =>
+                                    store.dispatch(
+                                        removeColor(color.id)
+                                    )
+                                }
                             />
+                            // <Color
+                            //     key={color.id}
+                            //     {...color}
+                            //     onRate={(rating) => onRate(color.id, rating)}
+                            //     onRemove={() => onRemove(color.id)}
+                            // />
                         )
                     })
             }
