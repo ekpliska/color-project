@@ -19,7 +19,7 @@ const ColorList = ({ store }) => {
                                         rateColor(color.id, rating)
                                     )
                                 }
-                                onRemote={(id) =>
+                                onRemove={() =>
                                     store.dispatch(
                                         removeColor(color.id)
                                     )
