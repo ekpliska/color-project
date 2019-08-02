@@ -18,3 +18,22 @@ export const removeColor = (id) => ({
     type: C.REMOVE_COLOR,
     id
 });
+
+export const sortColor = (sortedBy) => {
+    return (
+    (sortedBy === 'rating') ?
+        ({
+            type: C.SORT_COLORS,
+            sortBy: 'SORTED_BY_RATING'
+        }) : 
+        (sortedBy === 'title') ?
+            ({
+                type: C.SORT_COLORS,
+                sortBy: 'SORT_BY_TITLE'
+            }) : 
+            ({
+                type: C.SORT_COLORS,
+                sortBy: 'SORT_BY_DATE'
+                })
+    )
+}
