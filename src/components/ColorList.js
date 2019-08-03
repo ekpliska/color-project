@@ -2,7 +2,7 @@ import React from 'react';
 import Color from './Color';
 import PropTypes from 'prop-types'
 
-const ColorList = ({ colors }) => {
+const ColorList = ({ colors, onRemove = f => f }) => {
     // debugger;
     return (
         <div>
@@ -11,7 +11,7 @@ const ColorList = ({ colors }) => {
                     ? <p>No colors</p>
                     : colors.map((color, index) => {
                         return (
-                            <Color key={color.id} {...color} />
+                            <Color key={color.id} {...color} onRemove={() => onRemove(color.id)} />
                         )
                     })
             }
@@ -19,8 +19,9 @@ const ColorList = ({ colors }) => {
     )
 }
 
-// ColorList.propTypes = {
-//     colors: PropTypes.array
-// }
+ColorList.propTypes = {
+    colors: PropTypes.array,
+    onRemove: PropTypes.func
+}
 
 export default ColorList;

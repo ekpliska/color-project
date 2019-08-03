@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import colors from './colors';
+import { colors } from './colors';
 
 export default combineReducers({
     colors: colors,

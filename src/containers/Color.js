@@ -1,20 +1,31 @@
 import React from 'react';
 import ColorList from '../components/ColorList';
 import { connect } from 'react-redux';
+import { removeColor } from '../actions/colors';
 
 class Color extends React.Component {
     render() {
-        const { colors } = this.props;
+        const { colors, onRemove } = this.props;
         return (
-            <ColorList colors={colors} />
+            <ColorList
+                colors={colors}
+                onRemove={onRemove} />
         )
     }
 }
 
 const mapStateToProps = ({ colors }) => {
     return {
-        colors: colors.colors
+        colors: colors
     }
 }
 
-export default connect(mapStateToProps, null)(Color);
+const mapDispatchToProps = (dispatch) => {
+    console.log('dispatch', dispatch);
+    
+    return {
+        onRemove: (id) => dispatch(removeColor(id))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Color);

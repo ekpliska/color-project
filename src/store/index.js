@@ -1,8 +1,14 @@
-import { createStore, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
-import reducers from '../reducers';
+// Хранилище
 
-export default () => {
-    const store = createStore(reducers, applyMiddleware(logger));
-    return store;
-}
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import logger from 'redux-logger';
+import { colors } from '../reducers/colors';
+import stateData from '../initialState';
+
+
+const storeFactory = (initialState = stateData) =>
+    applyMiddleware(logger)(createStore)(
+        combineReducers({ colors }), stateData
+    )
+
+export default storeFactory
