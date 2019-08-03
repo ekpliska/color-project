@@ -1,24 +1,26 @@
 import React from 'react';
-import { Color } from './Color';
+import Color from './Color';
+import PropTypes from 'prop-types'
 
-const ColorList = ({ colors, onRate, onRemove }) => {
+const ColorList = ({ colors }) => {
+    // debugger;
     return (
-        <div className="color-list">
+        <div>
             {
-                colors.length === 0
-                    ? <p>No colors, add color...</p>
+                (colors.length === 0)
+                    ? <p>No colors</p>
                     : colors.map((color, index) => {
                         return (
-                            <Color key={color.id}
-                                {...color}
-                                onRate={onRate}
-                                onRemove={onRemove}
-                            />
+                            <Color key={color.id} {...color} />
                         )
                     })
             }
         </div>
     )
 }
+
+// ColorList.propTypes = {
+//     colors: PropTypes.array
+// }
 
 export default ColorList;
