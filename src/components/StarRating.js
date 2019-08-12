@@ -1,14 +1,19 @@
 import React from 'react';
 import Star from './Star';
 
-class StarRating extends React.Component { 
-    render() {
-        const { totalStar } = this.props;
-        const { starsSelected } = this.props;
-        return (
-            <Star />
-        )
-    }
+const StarRating = ({ starsSelected = 0, totalStars = 5 }) => {
+    return (
+        <React.Fragment>
+            <div className="star-rating">
+                {[...Array(totalStars)].map((n, i) => {
+                    return (
+                        <Star key={i} selected={i < starsSelected} />
+                    )
+                })}
+            </div>
+            <p>{starsSelected} of {totalStars}</p>
+        </React.Fragment>
+    )
 }
 
 export default StarRating;

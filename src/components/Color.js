@@ -4,7 +4,7 @@ import StarRating from './StarRating';
 
 class Color extends React.Component {
     render() {
-        const { title, color, onRemove } = this.props
+        const { title, color, rating, onRemove } = this.props;
         return (
             <div className="color-item" style={this.style}>
                 <h2 ref="title">
@@ -16,7 +16,7 @@ class Color extends React.Component {
                 </div>
                 <div className="color-item__star">
                     {/* <StarRating starsSelected={rating} onRate={onRate} /> */}
-                    <StarRating />
+                    <StarRating starsSelected={rating} />
                 </div>
             </div>
         )

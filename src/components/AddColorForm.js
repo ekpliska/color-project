@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const AddColorForm = ({ onNewColor = f => f }) => {
@@ -17,10 +17,10 @@ const AddColorForm = ({ onNewColor = f => f }) => {
         <form className="add-color" onSubmit={submit}>
             <input ref={input => _title = input}
                 type="text"
-                placeholder="Color title..." required class="add-color__input" />
+                placeholder="Color title..." required className="add-color__input" />
             <input ref={input => _color = input}
                 type="color" required />
-            <button class="add-color__button">ADD</button>
+            <button className="add-color__button">ADD</button>
         </form>
     )
 

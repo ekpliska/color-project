@@ -11,4 +11,4 @@ const storeFactory = (initialState = stateData) =>
         combineReducers({ colors }), stateData
     )
 
-export default storeFactory
+export default storeFactory;

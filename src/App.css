@@ -83,6 +83,10 @@ form > input {
 	font-weight: bold;
 }
 
+.star-rating {
+	display: block;
+	height: 25px;
+}
 .star {
 	cursor: pointer;
 	height: 25px;
@@ -102,6 +106,12 @@ form > input {
 		0% 38%,
 		37% 38%
 	);
+}
+.color-item__star > p {
+	color: #696565;
+	font-size: 12px;
+	display: block;
+	text-align: center;
 }
 .star.selected {
 	background-color: red;
