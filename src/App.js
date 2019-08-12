@@ -7,10 +7,15 @@ import NewColor from './containers/NewColor';
 class App extends React.Component {
 	render() {
 		return (
-			<div>
-				<NewColor />
-				<Color  />
-			</div>
+			<main>
+				<div className="color-app">
+					<h1 className="color-app__title">
+						Color Project
+					</h1>
+					<NewColor />
+					<Color />
+				</div>
+			</main>
 		)
 	}
 }

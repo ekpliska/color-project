@@ -21,8 +21,6 @@ const mapStateToProps = ({ colors }) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    console.log('dispatch', dispatch);
-    
     return {
         onRemove: (id) => dispatch(removeColor(id))
     }

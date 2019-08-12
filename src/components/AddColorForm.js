@@ -17,10 +17,10 @@ const AddColorForm = ({ onNewColor = f => f }) => {
         <form className="add-color" onSubmit={submit}>
             <input ref={input => _title = input}
                 type="text"
-                placeholder="color title..." required />
+                placeholder="Color title..." required class="add-color__input" />
             <input ref={input => _color = input}
                 type="color" required />
-            <button>ADD</button>
+            <button class="add-color__button">ADD</button>
         </form>
     )
 

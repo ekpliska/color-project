@@ -1,33 +1,108 @@
-.App {
-  text-align: center;
+body {
+    background: #f06d06;
+    font-size: 80%;
+    padding: 20px;
+}
+main {
+    background: white;
+    height: 100vh;
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    resize: both;
+    overflow: auto;
+}
+.color-app {
+    width: 100%;
+}
+.color-app__title {
+    color: #282c34;
+    text-align: center;
+}
+form {
+    text-align: center;
+}
+form > input {
+    margin: 10px;
+}
+.add-color__input {
+    border: 2px solid #f06d06;
+    padding: 10px;
+    border-radius: 12px; 
+    outline: none;
+}
+.add-color__button {
+    background: #f06d06;
+    color: #fff;
+    padding: 7px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+}
+.add-color__button:hover {
+    background-color: sandybrown;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.colors-lists {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2vw;
+	height: 320px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.color-item {
+	border-radius: 12px;
+	padding: 5px;
+	border: 1px solid silver;
+	position: relative;
+	box-shadow: 4px 3px 3px 0px #eee;
+}
+.color-item > h2 {
+	color: #696565;
+	margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.color-item__line {
+	height: 40px;
+	margin: 20px 0;
+	background-color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.color-item > button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 10px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.star {
+	cursor: pointer;
+	height: 25px;
+	width: 25px;
+	margin: 2px;
+	float: left;
+	background-color: grey;
+	clip-path: polygon(
+		50% 0%,
+		63% 38%,
+		100% 38%,
+		69% 59%,
+		82% 100%,
+		50% 75%,
+		18% 100%,
+		31% 59%,
+		0% 38%,
+		37% 38%
+	);
+}
+.star.selected {
+	background-color: red;
 }

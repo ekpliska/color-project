@@ -1,22 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import StarRating from './StarRating';
 
 class Color extends React.Component {
     render() {
-        console.log('------', typeof(this.props.onRemove));
-        
         const { title, color, onRemove } = this.props
         return (
-            <section className="color" style={this.style}>
-                <h1 ref="title">{title}: {color}</h1>
-                <button onClick={onRemove}>Удалить</button>
-                <div className="color"
+            <div className="color-item" style={this.style}>
+                <h2 ref="title">
+                    {title}
+                </h2>
+                <button onClick={onRemove}>x</button>
+                <div className="color-item__line"
                     style={{ backgroundColor: color }}>
                 </div>
-                {/* <div>
-                    <StarRating starsSelected={rating} onRate={onRate} />
-                </div> */}
-            </section>
+                <div className="color-item__star">
+                    {/* <StarRating starsSelected={rating} onRate={onRate} /> */}
+                    <StarRating />
+                </div>
+            </div>
         )
     }
 }

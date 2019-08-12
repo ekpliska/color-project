@@ -3,13 +3,12 @@ import Color from './Color';
 import PropTypes from 'prop-types'
 
 const ColorList = ({ colors, onRemove = f => f }) => {
-    // debugger;
     return (
-        <div>
+        <div className="colors-lists">
             {
                 (colors.length === 0)
                     ? <p>No colors</p>
-                    : colors.map((color, index) => {
+                    : colors.map((color) => {
                         return (
                             <Color key={color.id} {...color} onRemove={() => onRemove(color.id)} />
                         )
