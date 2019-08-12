@@ -10,7 +10,7 @@ const initialState = {
         {
             "id": "2",
             "title": "Lawn",
-            "color": "26ac56",
+            "color": "#26ac56",
             "rating": 3
         },
         {

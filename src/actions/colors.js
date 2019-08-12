@@ -14,3 +14,10 @@ export const addColor = (title, color) =>
         color,
         timestamp: new Date().toString()
     })
+
+export const rateColor = (id, rating) => ({
+    type: C.RATE_COLOR,
+    id: id,
+    rating: rating
+})
+

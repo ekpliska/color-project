@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Star = ({ selected }) => {
+const Star = ({ selected, onClick = f => f }) => {
     return (
-        <div className={(selected) ? "star selected" : "star"}></div>
+        <div className={(selected) ? "star selected" : "star"} onClick={onClick}></div>
     )
 }
 

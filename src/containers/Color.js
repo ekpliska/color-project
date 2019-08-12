@@ -1,15 +1,17 @@
 import React from 'react';
 import ColorList from '../components/ColorList';
 import { connect } from 'react-redux';
-import { removeColor } from '../actions/colors';
+import { removeColor, rateColor } from '../actions/colors';
 
 class Color extends React.Component {
     render() {
-        const { colors, onRemove } = this.props;
+        const { colors, onRemove, onRate } = this.props;
         return (
             <ColorList
                 colors={colors}
-                onRemove={onRemove} />
+                onRemove={onRemove}
+                onRate={onRate}
+            />
         )
     }
 }
@@ -22,8 +24,8 @@ const mapStateToProps = ({ colors }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onRemove: (id) => dispatch(removeColor(id))
-        
+        onRemove: (id) => dispatch(removeColor(id)),
+        onRate: (id, rating) => dispatch(rateColor(id, rating)),
     }
 }
 
