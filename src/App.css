@@ -40,7 +40,8 @@ form > input {
     padding: 7px;
     border: none;
     border-radius: 12px;
-    outline: none;
+	outline: none;
+	padding: 10px 25px;
     cursor: pointer;
 }
 .add-color__button:hover {
@@ -51,7 +52,7 @@ form > input {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 2vw;
-	height: 320px;
+	height: 370px;
 }
 
 .color-item {
@@ -85,7 +86,7 @@ form > input {
 
 .star-rating {
 	display: block;
-	height: 25px;
+	height: 30px;
 }
 .star {
 	cursor: pointer;
@@ -94,6 +95,7 @@ form > input {
 	margin: 2px;
 	float: left;
 	background-color: grey;
+	margin: 10px 0;
 	clip-path: polygon(
 		50% 0%,
 		63% 38%,
@@ -107,12 +109,24 @@ form > input {
 		37% 38%
 	);
 }
-.color-item__star > p {
+.color-item__star {
+	position: relative;
+}
+.star-rating {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+.star-rating > p {
 	color: #696565;
 	font-size: 12px;
 	display: block;
 	text-align: center;
+	margin: 10px 0;
 }
 .star.selected {
 	background-color: red;
+	margin: 10px 0;
 }
