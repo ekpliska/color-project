@@ -20,7 +20,6 @@ const initialState = {
             "rating": 0
         },
     ],
-    sort: "SORTED_BY_TITLE"
 }
 
 export default initialState;
