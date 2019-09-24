@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import PageTemplate from '../template/PageTemplate';
+import { AboutMenu } from './MainMenu';
+import { Company, History, Services, Location } from './AboutMenu';
 
 export const Home = () => {
     return (
-        <div className="home">
+        <section className="home">
             <h1>Home</h1>
             <nav>
                 <Link to="about">About</Link>
@@ -11,46 +14,62 @@ export const Home = () => {
                 <Link to="products">Products</Link>
                 <Link to="contact">Contact</Link>
             </nav>
-        </div>
+        </section>
     )
 }
 
 export const About = () => { 
     return (
-        <select className="about">
-            About
-        </select>
+        <PageTemplate>
+            <section className="about">
+                <h1>About</h1>
+                <Route component={AboutMenu} />
+                <Route exac path="/about" component={Company} />
+                <Route path="/about/history" component={History} />
+                <Route path="/about/services" component={Services} />
+                <Route path="/about/location" component={Location} />
+            </section>
+        </PageTemplate>
     )
 }
 
 export const Events = () => {
     return (
-        <select className="events">
-            Events
-        </select>
+        <PageTemplate>
+            <section className="events">
+                <h1>Events</h1>
+            </section>
+        </PageTemplate>
     )
 }
 
-export const Products = () => { 
+export const ColorApp = () => { 
     return (
-        <select className="products">
-            Products
-        </select>
+        <PageTemplate>
+            <section className="colorapp">
+                <h1>ColorApp</h1>
+            </section>
+        </PageTemplate>
     )
 }
 
 export const Contact = () => { 
     return (
-        <select className="contact">
-            Contact
-        </select>
+        <PageTemplate>
+            <section className="contact">
+                <h1>Contact</h1>
+            </section>
+        </PageTemplate>
     )
 }
 
 export const Whoops404 = ({ location }) => {
     return (
-        <div className="whoops-404">
-            <h1>Resource not found at '{location.pathname}'</h1>
-        </div>
+        <PageTemplate>
+            <section className="whoops-404">
+                <h1>Page not found</h1>
+                <p>Resource not found at '{location.pathname}'</p>
+            </section>
+        </PageTemplate>
     )
 }
