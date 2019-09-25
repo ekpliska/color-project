@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const selectedStyle = {
     backGroundColor: "white",
-    color: "slategray"
+    color: '#ffffff'
 }
 
 export const MainMenu = () => {
@@ -19,8 +19,8 @@ export const MainMenu = () => {
             <NavLink to="/events" activeStyle={selectedStyle}>
                 Events
             </NavLink>
-            <NavLink to="/products" activeStyle={selectedStyle}>
-                Products
+            <NavLink to="/colorapp" activeStyle={selectedStyle}>
+                ColorApp
             </NavLink>
             <NavLink to="/contact" activeStyle={selectedStyle}>
                 Contact

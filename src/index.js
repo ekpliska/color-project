@@ -6,13 +6,14 @@ import configureStore from './store/index';
 import { Provider } from 'react-redux';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Home, About, Events, ColorApp, Contact, Whoops404 } from './MenuComponents/Items';
-// import './stylesheets/page.css';
+import './stylesheets/page.css';
 
 const store = configureStore();
 
 ReactDOM.render(
     <HashRouter>
-        <div className="mainMenu">
+        <Provider store={store}>
+        <div className="main">
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
@@ -26,9 +27,7 @@ ReactDOM.render(
                 <Route component={Whoops404} />
             </Switch>
         </div>
-        {/* <Provider store={store}>
-            <App />
-        </Provider> */}
+        </Provider>
     </HashRouter>,
     document.getElementById('root')
 )

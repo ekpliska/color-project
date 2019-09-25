@@ -35,7 +35,7 @@ export const Services = () => {
 
 export const Location = () => {
     return (
-        <section className="services">
+        <section className="location">
             <h1>
                 Location
             </h1>

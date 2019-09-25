@@ -3,18 +3,19 @@ import { Route, Link } from 'react-router-dom';
 import PageTemplate from '../template/PageTemplate';
 import { AboutMenu } from './MainMenu';
 import { Company, History, Services, Location } from './AboutMenu';
+import App from '../App';
 
 export const Home = () => {
     return (
-        <section className="home">
+        <div className="home">
             <h1>Home</h1>
-            <nav>
+            <div>
                 <Link to="about">About</Link>
                 <Link to="events">Events</Link>
-                <Link to="products">Products</Link>
+                <Link to="colorapp">Color App</Link>
                 <Link to="contact">Contact</Link>
-            </nav>
-        </section>
+            </div>
+        </div>
     )
 }
 
@@ -22,7 +23,6 @@ export const About = () => {
     return (
         <PageTemplate>
             <section className="about">
-                <h1>About</h1>
                 <Route component={AboutMenu} />
                 <Route exac path="/about" component={Company} />
                 <Route path="/about/history" component={History} />
@@ -47,7 +47,7 @@ export const ColorApp = () => {
     return (
         <PageTemplate>
             <section className="colorapp">
-                <h1>ColorApp</h1>
+                <App />
             </section>
         </PageTemplate>
     )
@@ -66,10 +66,10 @@ export const Contact = () => {
 export const Whoops404 = ({ location }) => {
     return (
         <PageTemplate>
-            <section className="whoops-404">
+            <div className="whoops-404">
                 <h1>Page not found</h1>
                 <p>Resource not found at '{location.pathname}'</p>
-            </section>
+            </div>
         </PageTemplate>
     )
 }

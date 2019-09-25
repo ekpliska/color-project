@@ -1,4 +1,4 @@
-nav.main-menu {
+.main-menu {
 
   display: flex;
   flex-direction: column;
@@ -10,26 +10,25 @@ nav.main-menu {
   min-width: 20%;
 }
 
-a {
+.main-menu a {
     color: ghostwhite;
     text-align: center;
     padding: 1em;
     font-size: 1.5em;
 }
 
-
-div.about-menu {
+.about-menu {
   width: 100%;
   list-style-type: none;
   display: flex;
   background-color: slategray;
 }
 
-div.about-menu > li {
+.about-menu li {
     flex-grow: 1;
 }
 
-div.about-menu > a {
+.about-menu li a {
     display: block;
     width: calc(100% - 1em);
     text-align: center;
