@@ -67,7 +67,6 @@ export const Whoops404 = ({ location }) => {
     return (
         <PageTemplate>
             <div className="whoops-404">
-                <h1>Page not found</h1>
                 <p>Resource not found at '{location.pathname}'</p>
             </div>
         </PageTemplate>
