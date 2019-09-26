@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StarRating from './StarRating';
+import { withRouter } from 'react-router-dom';
 
 class Color extends React.Component {
     render() {
-        const { title, color, rating, onRemove, onRate } = this.props;
+        const { id, title, color, rating, onRemove, onRate, history } = this.props;
         return (
             <div className="color-item" style={this.style}>
-                <h2 ref="title">
+                <h2 ref="title" onClick={() => history.push(`/colorapp/${id}`)}>
                     {title}
                 </h2>
                 <button onClick={onRemove}>x</button>
@@ -34,4 +35,4 @@ Color.defaultProps = {
     onRate: f => f
 }
 
-export default Color;
+export default withRouter(Color);

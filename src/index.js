@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import configureStore from './store/index';
 import { Provider } from 'react-redux';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Home, About, Events, ColorApp, Contact, Whoops404 } from './MenuComponents/Items';
 import './stylesheets/page.css';
+import { Details } from './containers/Details';
 
 const store = configureStore();
 
@@ -23,6 +23,7 @@ ReactDOM.render(
                 <Route path="/events" component={Events} />
                 <Route path="/colorapp" component={ColorApp} />
                 <Route path="/contact" component={Contact} />
+                <Route path="/colorapp/:id" component={Details} />
                 {/* Определяем 404 старницу для несуществущих маршрутов */}
                 <Route component={Whoops404} />
             </Switch>
