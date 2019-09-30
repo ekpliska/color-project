@@ -21,9 +21,9 @@ ReactDOM.render(
                 <Redirect from="/services" to="/about/services" />
                 <Redirect from="/location" to="/about/location" />
                 <Route path="/events" component={Events} />
+                <Route path="/colorapp/:id" component={Details} />
                 <Route path="/colorapp" component={ColorApp} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/colorapp/:id" component={Details} />
                 {/* Определяем 404 старницу для несуществущих маршрутов */}
                 <Route component={Whoops404} />
             </Switch>

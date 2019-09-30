@@ -13,8 +13,11 @@ class Color extends React.Component {
                 </h2>
                 <button onClick={onRemove}>x</button>
                 <div className="color-item__line"
+                    onClick={() => history.push(`/colorapp/${id}`)}
+                    style={{ backgroundColor: color }}></div>
+                {/* <div className="color-item__line"
                     style={{ backgroundColor: color }}>
-                </div>
+                </div> */}
                 <div className="color-item__star">
                     <StarRating starsSelected={rating} onRate={onRate} />
                 </div>

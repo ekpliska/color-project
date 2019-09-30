@@ -15,7 +15,6 @@ class App extends React.Component {
 					</h1>
 					<NewColor />
 					<Color />
-					<ColorDetails />
 				</div>
 			</main>
 		)
