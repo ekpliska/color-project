@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import './App.css';
 import Color from './containers/Color';
 import NewColor from './containers/NewColor';
-import ColorDetails from './components/ColorDetails';
 
 class App extends React.Component {
 	render() {
